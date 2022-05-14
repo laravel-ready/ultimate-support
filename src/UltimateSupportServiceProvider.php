@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 use LaravelReady\UltimateSupport\Facades\UltimateSupport;
 
-final class LicenseServerServiceProvider extends BaseServiceProvider
+final class UltimateSupportServiceProvider extends BaseServiceProvider
 {
     public function boot(): void
     {
