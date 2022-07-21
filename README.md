@@ -10,6 +10,13 @@
 
 Support collection for Laravel. This package is standalone and does not require external packages.
 
+## Install
+
+Install via Composer:
+
+```bash
+composer require laravel-ready/ultimate-support
+```
 
 # Support Classes
 
