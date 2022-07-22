@@ -30,7 +30,8 @@ class IpSupport
     {
         $ipAddress = null;
 
-        $response = Http::get('https://api.ipify.org/?format=json');
+        // TODO: Add config option to disable this feature
+        $response = Http::withoutVerifying()->get('https://api.ipify.org/?format=json');
 
         if ($response->ok()) {
             $ipAddress = $response->json()['ip'] ?? null;
@@ -73,7 +74,11 @@ class IpSupport
                 return $_SERVER['HTTP_X_FORWARDED_FOR'];
             }
         } catch (Exception $exp) {
+            // TODO: add config option to logging errors
             Log::alert('getIP error', ['error' => $exp]);
+
+            // TODO: add custom exception
+            throw $exp;
         }
 
         return $baseIp;
