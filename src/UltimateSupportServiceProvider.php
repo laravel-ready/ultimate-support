@@ -10,6 +10,9 @@ final class UltimateSupportServiceProvider extends BaseServiceProvider
 {
     public function boot(): void
     {
+        $this->publishes([
+            __DIR__ . '/../config/ultimate-support.php' => $this->app->configPath('ultimate-support.php'),
+        ], 'ultimate-support-config');
     }
 
     public function register(): void
@@ -17,5 +20,7 @@ final class UltimateSupportServiceProvider extends BaseServiceProvider
         $this->app->singleton('ultimate-support', function () {
             return new UltimateSupport();
         });
+
+        $this->mergeConfigFrom(__DIR__ . '/../config/ultimate-support.php', 'ultimate-support');
     }
 }
