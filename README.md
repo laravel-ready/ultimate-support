@@ -30,7 +30,7 @@ php artisan vendor:publish --tag=ultimate-support-config
 
 Contains methods for working with IP addresses.
 
-`use LaravelReady\UltimateSupport\Support\IpSupport;`
+`use LaravelReady\UltimateSupport\Supports\IpSupport;`
 
 | Method | Description | Result |
 | ------ | ----------- | ------ |
