@@ -3,7 +3,7 @@
 namespace LaravelReady\UltimateSupport\Support;
 
 use Exception;
-
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
@@ -26,11 +26,10 @@ class IpSupport
      *
      * @return null | string
      */
-    public static function getLocalhostPublicIp(): null | string
+    public static function getPublicIp(): null | string
     {
         $ipAddress = null;
 
-        // TODO: Add config option to disable this feature
         $response = Http::withoutVerifying()->get('https://api.ipify.org/?format=json');
 
         if ($response->ok()) {
@@ -53,14 +52,14 @@ class IpSupport
      *
      * @return string
      */
-    public static function getIP(bool $getLocalPublicIp = true): string
+    public static function getIp(bool $getLocalPublicIp = true): string
     {
         $baseIp = $_SERVER['REMOTE_ADDR'];
 
         try {
             // get localhost public ip
-            if ($getLocalPublicIp && self::isLocalhost()) {
-                return self::getLocalhostPublicIp();
+            if (($getLocalPublicIp && Config::get('ultimate-support.ip.get_local_public_ip')) && self::isLocalhost()) {
+                return self::getPublicIp();
             }
 
             // check other conditions, cloudflare etc
@@ -74,8 +73,9 @@ class IpSupport
                 return $_SERVER['HTTP_X_FORWARDED_FOR'];
             }
         } catch (Exception $exp) {
-            // TODO: add config option to logging errors
-            Log::alert('getIP error', ['error' => $exp]);
+            if (Config::get('ultimate-support.ip.get_local_public_ip')) {
+                Log::alert('Ultimate Support: getIP error', ['error' => $exp]);
+            }
 
             // TODO: add custom exception
             throw $exp;
