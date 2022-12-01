@@ -49,9 +49,7 @@ Contains methods for working with IP addresses.
 
 > **Warning** `getPublicIp` is uses [ipify.org](https://api.ipify.org/?format=json) service and caching results for 1 day.
 
-
-- The `getLocalhostPublicIp` method is useful for checking if the client is from localhost. Uses https://api.ipify.org/?format=json endpoint.
-- In laravel native way you can use `Request::ip()` method but this method is cover all cases. For example cloudflare, nginx, etc. Also see this stackoverflow [question](https://stackoverflow.com/q/13646690/6940144).
+> **Note** In laravel native way you can use `Request::ip()` method but this method is cover all cases. For example cloudflare, nginx, etc. Also see this stackoverflow [question](https://stackoverflow.com/q/13646690/6940144).
 
 
 [badge_downloads]:      https://img.shields.io/packagist/dt/laravel-ready/ultimate-support.svg?style=flat-square
