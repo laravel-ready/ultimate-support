@@ -41,7 +41,7 @@ Contains methods for working with IP addresses.
 ### getIpAddress Result
 ```php
 [
-  "is_local" => true, // Is client from localhost
+  "is_local" => true, // is client from localhost
   "base_ip" => "127.0.0.1", // laravel's request()->ip()
   "ip_address" => "111.111.111.111", // real client ip
 ]
