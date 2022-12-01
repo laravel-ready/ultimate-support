@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelReady\UltimateSupport\Support;
+namespace LaravelReady\UltimateSupport\Supports;
 
 use Exception;
 use Illuminate\Support\Facades\Config;
