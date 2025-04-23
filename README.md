@@ -7,7 +7,6 @@
 [![Total Downloads][badge_downloads]][link_packagist]
 [![License][badge_license]][link_license]
 
-
 Support collection for Laravel. This package is standalone and does not require external packages.
 
 ## Install
@@ -39,6 +38,7 @@ Contains methods for working with IP addresses.
 | **getIpAddress** | Get client real IP address | `array` |
 
 ### getIpAddress Result
+
 ```php
 [
   "is_local" => true, // is client from localhost
@@ -48,9 +48,7 @@ Contains methods for working with IP addresses.
 ```
 
 > **Warning** `getPublicIp` is uses [ipify.org](https://api.ipify.org/?format=json) service and caching results for 1 day.
-
-> **Note** In laravel native way you can use `Request::ip()` method but this method is cover all cases. For example cloudflare, nginx, etc. Also see this stackoverflow [question](https://stackoverflow.com/q/13646690/6940144).
-
+> **Note** In laravel native way you can use `Request::ip()` method but this method is not cover all cases. For example cloudflare, nginx, etc. Also see this stackoverflow [question](https://stackoverflow.com/q/13646690/6940144).
 
 [badge_downloads]:      https://img.shields.io/packagist/dt/laravel-ready/ultimate-support.svg?style=flat-square
 
@@ -63,4 +61,3 @@ Contains methods for working with IP addresses.
 [link_license]:         LICENSE
 
 [link_packagist]:       https://packagist.org/packages/laravel-ready/ultimate-support
-
