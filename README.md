@@ -1,6 +1,6 @@
 # Ultimate Support
 
-[![EgoistDeveloper Laravel Support](https://preview.dragon-code.pro/EgoistDeveloper/Ultimate-Support.svg?brand=laravel)](https://github.com/laravel-ready/ultimate-support)
+[![relliv Laravel Support](https://preview.dragon-code.pro/relliv/Ultimate-Support.svg?brand=laravel)](https://github.com/laravel-ready/ultimate-support)
 
 [![Stable Version][badge_stable]][link_packagist]
 [![Unstable Version][badge_unstable]][link_packagist]
